@@ -46,7 +46,7 @@ public class DuAnController {
 			@RequestParam("endDate") Date endDate, @RequestParam(value = "photo", required = false) MultipartFile photo,
 			@RequestParam(value = "description") String description) throws IOException {
 		DuAn duAn;
-		if (idDuAn != 0) {
+		if (idDuAn != 0 && duanRepo.existsById(idDuAn)) {
 			duAn = duAnService.getById(idDuAn);
 		} else {
 			duAn = new DuAn();
@@ -70,11 +70,6 @@ public class DuAnController {
 	@GetMapping("/save")
 	public String formDuan(Model model) {
 		DuAn duan = new DuAn();
-		List<DuAn> listDuAn = duanRepo.findAll();
-		for (DuAn d : listDuAn) {
-			duan.setIdDuAn(d.getIdDuAn());
-		}
-		duan.setDuanList(listDuAn);
 		model.addAttribute("duan", duan);
 		return "duanform";
 	}

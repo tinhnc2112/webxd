@@ -10,13 +10,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Thành Đạt TK</title>
+  <title>About US</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="${contextPath}/resources/img/favicon.png" rel="icon">
-  <link href="${contextPath}/resources/img/favicon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -32,12 +31,20 @@
 
   <!-- Template Main CSS File -->
   <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
+  <link href="${contextPath}/resources/css/custom.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Moderna - v4.7.0
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+  <header id="header" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
@@ -51,8 +58,7 @@
           <li><a href="/about">Giới thiệu</a></li>
           <li class="dropdown"><a href="#"><span>Lĩnh vực</span></a>
           	<ul>
-              <li class="dropdown"><a href="#"><span>Dự án</span><i class="bi bi-chevron-down"></i></a>
-              </li>
+              <li class="dropdown"><a href="#"><span>Dự án</span><i class="bi bi-chevron-down"></i></a>              	
               <li class="dropdown"><a href="#"><span>Kinh doanh, thương mại</span><i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="#">Vật liệu xây dựng</a></li>
@@ -62,83 +68,46 @@
             </ul>
           </li>
           <li><a href="/news">Tin tức</a></li>
-          <li><a href="#">Tuyển dụng</a></li>         
+          <li><a href="/#">Tuyển dụng</a></li>
           <li><a href="/contact">Liên hệ</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
+
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container" data-aos="fade-up">
-
-      <div class="vlxd">
-        
-          <h3>Vật liệu xây dựng</h3>
-         
-      </div>
-     </div>
-    </section><!-- End Hero -->
-
   <main id="main">
-
-    <!-- ======= Contact Section ======= -->
-    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+<!-- ======= Values Section ======= -->
+    <section id="values" class="values">
       <div class="container">
-
+		<div class="section-title">
+          <h2>Dự án</h2>
+        </div>
         <div class="row">
+          <c:forEach items="${listDuAn}" var="duan">
+            <div class="col-md-5 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate m-20" data-aos="fade-up" data-aos-delay="100">
+              <div class="card" style="background-image: url('${contextPath}/resources/img/project/${duan.photo}');">
+                <div class="card-body">
+                  <h5 class="card-title">${duan.name}</h5>
+                  <p class="card-text">${duan.address}</p>
+                  <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                </div>
+              </div>
 
-          <div class="col-lg-6">
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="info-box">
-                  <i class="bx bx-map"></i>
-                  <h3>Địa chỉ</h3>
-                  <p>66 Trần Liễu, Thanh Bình, Hải Dương</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bx bx-envelope"></i>
-                  <h3>Email</h3>
-                  <p>khanhtuky6868@gmail.com</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bx bx-phone-call"></i>
-                  <h3>Điện thoại</h3>
-                  <p>02203.831.216</p>
-                </div>
-              </div>
             </div>
-
-          </div>
-
-          <div class="col-lg-6">
-            <!-- ======= Map Section ======= -->
-    <section class="map mt-2">
-      <div class="container-fluid p-0">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4479.754294061509!2d106.30849713142496!3d20.935193810832004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDU2JzA1LjYiTiAxMDbCsDE4JzM2LjMiRQ!5e0!3m2!1svi!2s!4v1635253781654!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </section><!-- End Map Section -->
-          </div>
-
+          </c:forEach>
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
-
+    </section><!-- End Values Section -->
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
     <div class="footer-top">
       <div class="container">
-        <div class="row"> 
+        <div class="row">
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>

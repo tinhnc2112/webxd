@@ -58,11 +58,11 @@
           <li><a href="/about">Giới thiệu</a></li>
           <li class="dropdown"><a href="#"><span>Lĩnh vực</span></a>
           	<ul>
-              <li class="dropdown"><a href="#"><span>Dự án</span><i class="bi bi-chevron-down"></i></a>
+              <li class="dropdown"><a href="/project"><span>Dự án</span><i class="bi bi-chevron-down"></i></a>
               </li>
               <li class="dropdown"><a href="#"><span>Kinh doanh, thương mại</span><i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="#">Vật liệu xây dựng</a></li>
+                  <li><a href="/building-materials">Vật liệu xây dựng</a></li>
                   <li><a href="#">Hoàn thiện nội thất</a></li>                  
                 </ul>
               </li>

@@ -31,6 +31,7 @@
 
   <!-- Template Main CSS File -->
   <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
+  <link href="${contextPath}/resources/css/custom.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Moderna - v4.7.0
@@ -57,17 +58,17 @@
           <li><a href="/about">Giới thiệu</a></li>
           <li class="dropdown"><a href="#"><span>Lĩnh vực</span></a>
           	<ul>
-              <li class="dropdown"><a href="#"><span>Dự án</span><i class="bi bi-chevron-down"></i></a>              	
+              <li class="dropdown"><a href="/project"><span>Dự án</span><i class="bi bi-chevron-down"></i></a>
               <li class="dropdown"><a href="#"><span>Kinh doanh, thương mại</span><i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="#">Vật liệu xây dựng</a></li>
+                  <li><a href="/building-materials">Vật liệu xây dựng</a></li>
                   <li><a href="#">Hoàn thiện nội thất</a></li>                  
                 </ul>
               </li>
             </ul>
           </li>
           <li><a href="/news">Tin tức</a></li>
-          <li><a href="team.html">Tuyển dụng</a></li>         
+          <li><a href="/#">Tuyển dụng</a></li>
           <li><a href="/contact">Liên hệ</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -112,28 +113,6 @@
       </div>
     </section><!-- End About Section -->
 <!-- ======= Values Section ======= -->
-    <section id="values" class="values">
-      <div class="container">
-		<div class="section-title">
-          <h2>Dự án</h2>
-        </div>
-        <div class="row">
-          <c:forEach items="${listDuAn}" var="duan">
-        <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-            <div class="card" style="background-image: url('${contextPath}/resources/img/project/${duan.photo}');">
-              <div class="card-body">
-                <h5 class="card-title"><a href="">${duan.name}</a></h5>
-                <p class="card-text">${duan.address}</p>
-                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-
-          </div>
-        </c:forEach>
-        </div>
-
-      </div>
-    </section><!-- End Values Section -->
      <!-- ======= worth Section ======= -->
     <section id="worth" class="worth section-bg">
       <div class="container">
@@ -141,14 +120,14 @@
           <h2>Giá trị cốt lõi</h2>
         </div>
         <div class="row">          
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 value-core" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-card-checklist"></i></div>
               <h4 class="title">Chu đáo</h4>
               <p class="description">Luôn quan tâm, thấu hiểu nhu cầu của khách hàng, đồng chí, đồng đội, đối tác, coi trọng các tiểu tiết trong công việc cũng như trong quan hệ với nội bộ và bên ngoài.</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 value-core " data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-bar-chart"></i></div>
               <h4 class="title">Chất lượng</h4>
@@ -156,7 +135,7 @@
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-4 col-md-6 value-core " data-aos="fade-up" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-brightness-high"></i></div>
               <h4 class="title">Sáng tạo</h4>
@@ -176,54 +155,54 @@
 
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="100">
-              <div class="member-img">
-                <img src="${contextPath}/resources/img/team/GD.png" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <h4>Nguyễn Công Khanh</h4>
-                <span>Giám đốc</span>
-              </div>
-            </div>
-          </div>
+<%--          <div class="col-lg-3 col-md-6">--%>
+<%--            <div class="member" data-aos="fade-up" data-aos-delay="100">--%>
+<%--              <div class="member-img">--%>
+<%--                <img src="${contextPath}/resources/img/team/avatar.png" width="100%" alt="">--%>
+<%--              </div>--%>
+<%--              <div class="member-info">--%>
+<%--                <h4>Nguyễn Công Khanh</h4>--%>
+<%--                <span>Giám đốc</span>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+<%--          </div>--%>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
-              <div class="member-img">
-                <img src="${contextPath}/resources/img/team/PGD.png" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <h4>Nguyễn Hoài Sơn</h4>
-                <span>Phó giám đốc</span>
-              </div>
-            </div>
-          </div>
+<%--          <div class="col-lg-3 col-md-6">--%>
+<%--            <div class="member" data-aos="fade-up" data-aos-delay="200">--%>
+<%--              <div class="member-img">--%>
+<%--                <img src="${contextPath}/resources/img/team/avatar.png" width="100%" alt="">--%>
+<%--              </div>--%>
+<%--              <div class="member-info">--%>
+<%--                <h4>Nguyễn Hoài Sơn</h4>--%>
+<%--                <span>Phó giám đốc</span>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+<%--          </div>--%>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="300">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <h4>Phạm Hùng Sơn</h4>
-                <span>Trưởng phòng kỹ thuật</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+<%--          <div class="col-lg-3 col-md-6">--%>
+<%--            <div class="member" data-aos="fade-up" data-aos-delay="300">--%>
+<%--              <div class="member-img">--%>
+<%--                <img src="${contextPath}/resources/img/team/avatar.png" width="100%" alt="">--%>
+<%--              </div>--%>
+<%--              <div class="member-info">--%>
+<%--                <h4>Phạm Hùng Sơn</h4>--%>
+<%--                <span>Trưởng phòng kỹ thuật</span>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+<%--          </div>--%>
+          <c:forEach items="${listNhanSu}" var="nhanSu">
+          <div class="col-lg-3 col-md-6">
             <div class="member" data-aos="fade-up" data-aos-delay="400">
               <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                <img src="${contextPath}/resources/img/team/${nhanSu.photo}" width="100%" alt="">
               </div>
               <div class="member-info">
-                <h4>Nguyễn Thị Uyên</h4>
-                <span>Kế toán</span>
+                <h4>${nhanSu.name}</h4>
+                <span>${nhanSu.position}</span>
               </div>
             </div>
           </div>
-
+          </c:forEach>
         </div>
 
       </div>

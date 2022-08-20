@@ -49,7 +49,7 @@ public class NhanSuController {
 			@RequestParam(value = "photo", required = false) MultipartFile photo,
 			@RequestParam(value = "position") String position) throws IOException {
 		NhanSu nhanSu;
-		if (idNhanSu != 0) {
+		if (idNhanSu != 0 && nhansuRepo.existsById(idNhanSu)) {
 			nhanSu = nhanSuService.getById(idNhanSu);
 		} else {
 			nhanSu = new NhanSu();
@@ -75,11 +75,6 @@ public class NhanSuController {
 	@GetMapping("/personnel-save")
 	public String formDuan(Model model) {
 		NhanSu nhansu = new NhanSu();
-		List<NhanSu> listNhanSu = nhansuRepo.findAll();
-		for (NhanSu d : listNhanSu) {
-			nhansu.setIdNhanSu(d.getIdNhanSu());
-		}
-		nhansu.setNhansuList(listNhanSu);
 		model.addAttribute("nhansu", nhansu);
 		return "nhansuform";
 	}

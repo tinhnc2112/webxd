@@ -2,9 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +10,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Thành Đạt TK</title>
+  <title>About US</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="${contextPath}/resources/img/favicon.png" rel="icon">
-  <link href="${contextPath}/resources/img/favicon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -36,12 +33,18 @@
   <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
   <link href="${contextPath}/resources/css/custom.css" rel="stylesheet">
 
+  <!-- =======================================================
+  * Template Name: Moderna - v4.7.0
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+  <header id="header" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
@@ -51,92 +54,56 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active" href="/home">Trang chủ</a></li>
+          <li><a class="active " href="/home">Trang chủ</a></li>
           <li><a href="/about">Giới thiệu</a></li>
           <li class="dropdown"><a href="#"><span>Lĩnh vực</span></a>
           	<ul>
               <li class="dropdown"><a href="/project"><span>Dự án</span><i class="bi bi-chevron-down"></i></a>
-              </li>
               <li class="dropdown"><a href="#"><span>Kinh doanh, thương mại</span><i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="/building-materials">Vật liệu xây dựng</a></li>
+                  <li><a href="#">Vật liệu xây dựng</a></li>
                   <li><a href="#">Hoàn thiện nội thất</a></li>                  
                 </ul>
               </li>
             </ul>
           </li>
           <li><a href="/news">Tin tức</a></li>
-          <li><a href="#">Tuyển dụng</a></li>         
+          <li><a href="/#">Tuyển dụng</a></li>
           <li><a href="/contact">Liên hệ</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
+
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container" data-aos="fade-up">
-
-      <div class="carousel-item active">
-        <div class="col-xl-6 col-lg-8">
-          <h1>Welcome to <span>ThanhDatTK</span></h1>
-          <br>
-          <a href="/about" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-        </div>
-      </div>
-     </div>
-    </section><!-- End Hero -->
-
   <main id="main">
-
-    <!-- ======= Values Section ======= -->
+<!-- ======= Values Section ======= -->
     <section id="values" class="values">
       <div class="container">
 		<div class="section-title">
-          <h2>Dự án nổi bật</h2>
+          <h2>Dự án</h2>
         </div>
         <div class="row">
-        <c:forEach items="${listDuAn}" var="duan">
-        <div class="col-md-5 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate m-20" data-aos="fade-up" data-aos-delay="100">
-            <div class="card" style="background-image: url('${contextPath}/resources/img/project/${duan.photo}');">
-              <div class="card-body">
-                <h5 class="card-title">${duan.name}</h5>
-                <p class="card-text">${duan.address}</p>
-                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+          <c:forEach items="${listDuAn}" var="duan">
+            <div class="col-md-5 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate m-20" data-aos="fade-up" data-aos-delay="100">
+              <div class="card" style="background-image: url('${contextPath}/resources/img/project/${duan.photo}');">
+                <div class="card-body">
+                  <h5 class="card-title">${duan.name}</h5>
+                  <p class="card-text">${duan.address}</p>
+                  <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                </div>
               </div>
-            </div>
 
-          </div>
-        </c:forEach>
- </div>
+            </div>
+          </c:forEach>
+        </div>
 
       </div>
     </section><!-- End Values Section -->
-
-    <!-- ======= Features Section ======= -->
-    <section class="features">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Tin tức</h2>
-        </div>
-      <c:forEach items="${listNews}" var="news">
-      	<div class="row" data-aos="fade-up">
-          <div class="col-md-5">
-            <img src="${contextPath}/resources/img/news/${news.photo}" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-7 pt-4">
-            <h3>${news.title}</h3>
-            <p class="fst-italic">${news.description}</p>            
-          </div>
-        </div>
-      </c:forEach>
-      </div>
-    </section><!-- End Features Section -->
   </main><!-- End #main -->
 
- <!-- ======= Footer ======= -->
+  <!-- ======= Footer ======= -->
   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
     <div class="footer-top">
       <div class="container">
@@ -182,7 +149,7 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short btn-page-up"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="${contextPath}/resources/vendor/aos/aos.js"></script>

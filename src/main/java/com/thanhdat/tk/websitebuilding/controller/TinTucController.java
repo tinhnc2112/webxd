@@ -48,7 +48,7 @@ public class TinTucController {
 			@RequestParam(value = "title") String title, @RequestParam("description") String description,
 			@RequestParam("date") Date date, @RequestParam(value = "photo", required = false) MultipartFile photo) throws IOException {
 		TinTuc tinTuc;
-		if (idTinTuc != 0) {
+		if (idTinTuc != 0 && tintucRepo.existsById(idTinTuc)) {
 			tinTuc = tinTucSer.getById(idTinTuc);
 		} else {
 			tinTuc = new TinTuc();
@@ -71,11 +71,6 @@ public class TinTucController {
 	@GetMapping("/news-save")
 	public String formTinTuc(Model model) {
 		TinTuc tintuc = new TinTuc();
-		List<TinTuc> listTinTuc = tintucRepo.findAll();
-		for (TinTuc t : listTinTuc) {
-			tintuc.setIdTinTuc(t.getIdTinTuc());
-		}
-		tintuc.setTintucList(listTinTuc);
 		model.addAttribute("tintuc", tintuc);
 		return "tintucform";
 	}

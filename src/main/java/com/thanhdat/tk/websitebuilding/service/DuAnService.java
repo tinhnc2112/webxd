@@ -7,7 +7,7 @@ import com.thanhdat.tk.websitebuilding.entity.DuAn;
 public interface DuAnService {
 
 	// get all project
-	List<DuAn> getallDuAn();
+	List<DuAn> getAllDuAn();
 
 	// create project
 	DuAn createDuAn(DuAn duAn);

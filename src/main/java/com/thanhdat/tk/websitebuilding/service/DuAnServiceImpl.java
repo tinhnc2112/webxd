@@ -15,7 +15,7 @@ public class DuAnServiceImpl implements DuAnService {
 	private DuAnRepository duAnRepo;
 
 	@Override
-	public List<DuAn> getallDuAn() {
+	public List<DuAn> getAllDuAn() {
 
 		return duAnRepo.findAll();
 	}

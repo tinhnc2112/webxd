@@ -27,7 +27,7 @@ public class HomeController {
 	
 	@GetMapping({"/home","/"})
 	public String viewHome(Model model) {
-		List<DuAn> listDuAn = duAnService.getallDuAn();
+		List<DuAn> listDuAn = duAnService.getAllDuAn();
 		List<TinTuc> listNews = tinTucService.getAllTinTuc();
 		model.addAttribute("listNews", listNews);
 		model.addAttribute("listDuAn", listDuAn);
@@ -36,7 +36,7 @@ public class HomeController {
 
 	@GetMapping({"/about"})
 	public String duAn(Model model) {
-		List<DuAn> listDuAn = duAnService.getallDuAn();
+		List<DuAn> listDuAn = duAnService.getAllDuAn();
 		List<NhanSu> listNhanSu = nhanSuService.getAllNhanSu();
 		model.addAttribute("listDuAn",listDuAn);
 		model.addAttribute("listNhanSu",listNhanSu);
@@ -52,7 +52,7 @@ public class HomeController {
 	
 	@GetMapping("/project")
 	public String viewDuAn(Model model) {
-		List<DuAn> listDuAn = duAnService.getallDuAn();
+		List<DuAn> listDuAn = duAnService.getAllDuAn();
 		model.addAttribute("listDuAn",listDuAn);
 		return "project";
 	}
@@ -61,4 +61,10 @@ public class HomeController {
 	public String contact() {
 		return "contact";
 	}
+
+	@GetMapping(value  = "/building-materials")
+	public String buildingMaterials() {
+		return "building-materials";
+	}
+
 }
